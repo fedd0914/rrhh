@@ -17,11 +17,14 @@ class NewLicencia extends Component
 
     public function mount()
     {
+        dd('hace');
         $this->licencia = new Licencia();
+        $this->licencia->concept = 'probando';
     }
 
     public function save_licencia()
     {
+        dd('llego');
         $this->validate();
         $this->licencia->save();
 

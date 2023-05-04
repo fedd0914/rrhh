@@ -1,4 +1,2 @@
-<div>
-    aqweqw
-    {{-- Do your work, then step back. --}}
-</div>
+<x-app-layout title="Nueva licencia">
+</x-app-layout>
