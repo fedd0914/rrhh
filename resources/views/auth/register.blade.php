@@ -32,7 +32,7 @@
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
                             <label class="block text-sm">
-                                <span class="text-gray-700 dark:text-gray-400">Name</span>
+                                <span class="text-gray-700 dark:text-gray-400">Nombre</span>
                                 <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Jane Doe" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                             </label>
                             <label class="block mt-4 text-sm">
@@ -40,12 +40,16 @@
                                 <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Jane Doe" type="email" name="email" :value="old('email')" required />
                             </label>
                             <label class="block mt-4 text-sm">
-                                <span class="text-gray-700 dark:text-gray-400">Password</span>
+                                <span class="text-gray-700 dark:text-gray-400">Año Ingreso</span>
+                                <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="2000" type="text" name="anio_ingreso" :value="old('text')" required />
+                            </label>
+                            <label class="block mt-4 text-sm">
+                                <span class="text-gray-700 dark:text-gray-400">Clave</span>
                                 <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="***************" type="password" name="password" required autocomplete="new-password" />
                             </label>
                             <label class="block mt-4 text-sm">
                                 <span class="text-gray-700 dark:text-gray-400">
-                                    Confirm password
+                                    Repita la clave
                                 </span>
                                 <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="***************" type="password" name="password_confirmation" required autocomplete="new-password" />
                             </label>
@@ -58,7 +62,7 @@
 
                         <p class="mt-4">
                             <a class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline" href="{{ route('login') }}">
-                                Already have an account? Login
+                                Ya tienes cuenta? Ingresa
                             </a>
                         </p>
                     </div>

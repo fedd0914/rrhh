@@ -20,7 +20,7 @@ Clonar el repositorio y luego
 ```console
 cd rrhh
 docker-compose up -d
-docker exec rrhh composer install
+docker exec rrhh-php composer install
 ```
 
 ## Agregar al .env

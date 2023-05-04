@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Http\Livewire\Backend\LicenciaUser;
+
+use Livewire\Component;
+
+class ListLicenciaUser extends Component
+{
+    public function render()
+    {
+        return view('livewire.backend.licencia-user.list-licencia-user');
+    }
+}

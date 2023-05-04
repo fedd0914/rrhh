@@ -21,6 +21,14 @@ Route::get('/', function () {
 //     return view('dashboard');
 // })->name('dashboard');
 
+$routes = ['licencia'];
+
+foreach ($routes as $route) {
+    Route::view($route, 'livewire.backend.' . $route . '.list-' . $route)->name('admin.' . $route . '.index');
+    Route::view($route . '/create', 'livewire.backend.' . $route . '.new-' . $route)->name('admin.' . $route . '.create');
+    Route::view($route . '/edit/{id}', 'livewire.backend.' . $route . '.edit-' . $route)->name('admin.' . $route . '.edit');
+}
+
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
