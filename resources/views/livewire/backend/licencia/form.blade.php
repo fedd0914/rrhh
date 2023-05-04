@@ -19,6 +19,7 @@
             placeholder="cantidad de días para esta licencia"
         />
 
+        <x-save-btn event="save_licencia" />
         <x-button
         text="hola"
         />

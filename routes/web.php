@@ -24,10 +24,11 @@ Route::get('/', function () {
 $routes = ['licencia'];
 
 foreach ($routes as $route) {
-    Route::view($route, 'livewire.backend.' . $route . '.list-' . $route)->name('admin.' . $route . '.index');
-    Route::view($route . '/create', 'livewire.backend.' . $route . '.new-' . $route)->name('admin.' . $route . '.create');
-    Route::view($route . '/edit/{id}', 'livewire.backend.' . $route . '.edit-' . $route)->name('admin.' . $route . '.edit');
+    Route::view($route, 'admin.' . $route . '.index')->name('admin.' . $route . '.index');
+    Route::view($route . '/create', 'admin.' . $route . '.create')->name('admin.' . $route . '.create');
+    Route::view($route . '/edit/{id}', 'admin.' . $route . '.edit')->name('admin.' . $route . '.edit');
 }
+
 
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
