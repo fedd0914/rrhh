@@ -23,9 +23,10 @@ class NewLicencia extends Component
     public function save_licencia()
     {
         $this->validate();
+        $this->licencia->is_active = true;
         $this->licencia->save();
 
-        return redirect()->route('admin.menu.edit', $this->menu->id);
+        return redirect()->route('admin.licencia.edit', $this->licencia->id);
     }
 
     public function render()

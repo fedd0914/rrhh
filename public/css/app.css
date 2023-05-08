@@ -150969,3 +150969,9 @@ video {
             animation: bounce 1s infinite;
   }
 }
+
+.text-danger{color:#dc3545!important}
+
+a.text-danger:focus,
+
+a.text-danger:hover{color:#a71d2a!important}

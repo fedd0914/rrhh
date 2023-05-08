@@ -21,7 +21,7 @@ Route::get('/', function () {
 //     return view('dashboard');
 // })->name('dashboard');
 
-$routes = ['licencia'];
+$routes = ['licencia', 'licencia-user'];
 
 foreach ($routes as $route) {
     Route::view($route, 'admin.' . $route . '.index')->name('admin.' . $route . '.index');

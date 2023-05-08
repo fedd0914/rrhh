@@ -1,3 +1,5 @@
-<x-app-layout title="Nueva licencia">
+<div>
     @include('livewire.backend.licencia.form')
-</x-app-layout>
+    <br>
+    <x-save-btn event="save_licencia" />
+</div>

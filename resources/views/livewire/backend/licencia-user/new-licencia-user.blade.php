@@ -1,3 +1,5 @@
 <div>
-    {{-- The best athlete wants his opponent at his best. --}}
+    @include('livewire.backend.licencia-user.form')
+    <br>
+    <x-save-btn event="save_licencia" />
 </div>

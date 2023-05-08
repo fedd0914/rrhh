@@ -3,11 +3,21 @@
 namespace App\Http\Livewire\Backend\Licencia;
 
 use Livewire\Component;
+use App\Models\Licencia;
+use Livewire\WithPagination;
 
 class ListLicencia extends Component
 {
+    use WithPagination;
+    // protected $paginationTheme = 'bootstrap';
+
     public function render()
     {
-        return view('livewire.backend.licencia.list-licencia');
+
+        $licencias = Licencia::orderBy('concept')
+            ->paginate(3);
+        return view('livewire.backend.licencia.list-licencia', [
+            'licencias' => $licencias
+        ]);
     }
 }
