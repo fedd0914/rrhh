@@ -30,61 +30,93 @@
 <body>
     <img src="assets/images/logo.png" style="max-width: 715px;">
 <br>
-<table style="width:100%; background-image: url('assets/images/fondo.jpg')  ">
-        <tr>
-            <td colspan="2" style="text-align: center;"><br>TICKET ORIGINAL N°: {{ $servicio->id }}<br><br></td>
+<table style="width:100%;">
+    <tr>
+        <td style="text-align: center"><b>Apellido y Nombre</b></td>
+        <td style="text-align: center"><b>Situación</b></td>
+        <td style="text-align: center"><b>Dependencia</b></td>
+        <td style="text-align: center"><b>BLACK</b></td>
+    </tr>
+    <tr>
+        <td style="text-align: center">{{$licenciaUser->user->name}}</td>
+        <td style="text-align: center">Planta Permanente</td>
+        <td style="text-align: center">I.P.D.U.V</td>
+        <td style="text-align: center">BLACK</td>
+    </tr>
+    <tr>
+        <td style="text-align: center"><b>D.N.I Nº</b></td>
+        <td colspan="2" style="text-align: center;"><b>Lugar de Trabajo</b></td>
+        <td style="text-align: center"><b>Cargo</b></td>
+    </tr>
+    <tr>
+        <td style="text-align: center">{{$licenciaUser->user->name}}</td>
+        <td colspan="2" style="text-align: center;">{{ $licenciaUser->id }}</td>
+        <td style="text-align: center">{{ $licenciaUser->id }}</td>
+    </tr>
 
-        </tr>
-        <tr>
-            <td style="text-align: center">FECHA DE INICIO:</td>
-            <td style="text-align: center"> {{ $servicio->created_at->format('d/m/y H:i:s') }}</td>
+    <tr>
+        <td style="text-align: center"><b>Domicilio Actual</b></td>
+        <td style="text-align: center;"><b>Profesional SI/NO</b></td>
+        <td colspan="2" style="text-align: center"><b>Título</b></td>
+    </tr>
+    <tr>
+        <td style="text-align: center">{{$licenciaUser->user->name}}</td>
+        <td style="text-align: center;">{{ $licenciaUser->id }}</td>
+        <td colspan="2"  style="text-align: center">{{ $licenciaUser->id }}</td>
+    </tr>
+</table>
 
-        </tr>
-        <tr>
-            <td style="text-align: center">FECHA FIN:</td>
-            <td style="text-align: center">{{ $servicio->updated_at->format('d/m/y H:i:s') }}</td>
+    <h2 style="text-align: center;"> <b><u>SOLICITUD UNICA DE PERMISOS Y LICENCIAS </u></b></h2>
 
-        </tr>
-        <tr>
-            <td colspan="2" style="text-align: center;">PROBLEMA</td>
-        </tr>
-        <tr>
-            <td colspan="2" style="text-align: center"><br> {{ $servicio->problema }} <br><br></td>
-        </tr>
-        <tr>
-            <td colspan="2" style="text-align: center;">
-                <h7>SOLUCION</h7>
-            </td>
+<table style="width:100%;">
+    <tr>
+        <td colspan="2" style="text-align: center"><b>Beneficio</b></td>
+        <td style="text-align: center"><b>Días</b></td>
+        <td colspan="2" style="text-align: center"><b>Beneficio</b></td>
+        <td style="text-align: center"><b>Días</b></td>
+        <td colspan="2" style="text-align: center"><b>Beneficio</b></td>
+        <td style="text-align: center"><b>Días</b></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: center">
+            Licencia Ordinaria Anual<br>
+            (Art. 7)
+            2022
+        </td>
+        <td style="text-align: center"> X | X </td>
+        <td colspan="2" style="text-align: center">
+            Permiso P/Examen<br>
+            (Art. 36)
+        </td>
+        <td style="text-align: center">X | X</td>
+        <td colspan="2" style="text-align: center">
+            Lic. Por Nac. <br> Agente Varón
+            (Art. 54)
+        </td>
+        <td style="text-align: center">X | X</td>
+    </tr>
 
-        </tr>
-        <tr>
-            <td colspan="2" style="text-align: center"><br> {{ $servicio->solucion }} <br><br></td>
-        </tr>
-        <tr>
-            <td style="text-align: center">AREA: {{ $servicio->device->area->descripcion }}</td>
-            <td style="text-align: center"></td>
-        </tr>
-        <tr>
-            <td style="text-align: center"> EQUIPO INVENTARIO NUM. {{ $servicio->device->inventario }}</td>
-            <td style="text-align: center">TÉCNICO</td>
-        </tr>
-        <tr>
-            <td style="text-align: center"><br>
-                ----------------------------------- <br>
-                @if ($servicio->entrega_baja)
-                    {{ $servicio->nombre_usuario }}
-                @else
-                    FIRMA DEL RESPONSABLE EQUIPO
-                @endif
-            </td>
-            <td style="text-align: center">
-                <br>
-                ----------------------------------- <br>
-                {{ $servicio->userAsigned->name }}
-            </td>
-        </tr>
+    <tr>
+        <td colspan="2" style="text-align: center">
+            Licencia Ordinaria Anual<br>
+            (Art. 7)
+            2022
+        </td>
+        <td style="text-align: center"> X | X </td>
+        <td colspan="2" style="text-align: center">
+            Permiso P/Examen<br>
+            (Art. 36)
+        </td>
+        <td style="text-align: center">X | X</td>
+        <td colspan="2" style="text-align: center">
+            Lic. Por Nac. <br> Agente Varón
+            (Art. 54)
+        </td>
+        <td style="text-align: center">X | X</td>
+    </tr>
+</table>
 
-    </table>
+
 </body>
 </html>
 

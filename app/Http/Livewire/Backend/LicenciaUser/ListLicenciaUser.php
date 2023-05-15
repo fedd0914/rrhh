@@ -3,8 +3,9 @@
 namespace App\Http\Livewire\Backend\LicenciaUser;
 
 use Livewire\Component;
-use Barryvdh\DomPDF\PDF;
 use App\Models\Licencia_User;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
+use Livewire\WithPagination;
 
 class ListLicenciaUser extends Component
 {
@@ -17,7 +18,7 @@ class ListLicenciaUser extends Component
         $licenciaUser = Licencia_User::where('id', $id)->first();
 
         $this->pdfContent = [
-            'servicio' => $licenciaUser,
+            'licenciaUser' => $licenciaUser,
             'fecha' => $fecha,
         ];
 
@@ -28,7 +29,8 @@ class ListLicenciaUser extends Component
     }
     public function render()
     {
-
-        return view('livewire.backend.licencia-user.list-licencia-user');
+        return view('livewire.backend.licencia-user.list-licencia-user', [
+            'licenciasUsers' => Licencia_User::orderBy('created_at')->paginate(3)
+        ]);
     }
 }
