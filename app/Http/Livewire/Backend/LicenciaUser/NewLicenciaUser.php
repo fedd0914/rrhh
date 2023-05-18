@@ -9,7 +9,7 @@ use App\Models\Licencia_User;
 
 class NewLicenciaUser extends Component
 {
-    public $licencia, $user, $licenciaUser, $userSelected, $licenciaSelected;
+    public $licencia, $user, $licenciaUser, $userSelected = 1, $licenciaSelected = 1;
     public $totalDays = 0, $avilibleDays = 0;
 
     protected $rules = [
