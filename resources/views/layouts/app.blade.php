@@ -25,6 +25,7 @@
     <script src="{{asset('js/charts-bars.js')}}" defer></script> --}}
 
     @livewireStyles
+    @livewire('livewire-toast')
     {{-- <script>
         import Turbolinks from 'turbolinks';
         Turbolinks.start()
@@ -42,6 +43,9 @@
         <div class="flex flex-col flex-1 w-full">
             @include('layouts.navigation-dropdown')
             <main class="h-full overflow-y-auto">
+                 @if(Session::has('message'))
+                    {{ Session::get('message') }}
+                @endif
                 {{ $slot }}
             </main>
         </div>

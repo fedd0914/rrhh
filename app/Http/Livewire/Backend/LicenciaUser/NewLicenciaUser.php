@@ -22,22 +22,27 @@ class NewLicenciaUser extends Component
     public function mount()
     {
         $this->licenciaUser = new Licencia_User();
-        // $this->licenciaUser->days;
     }
 
     public function save_licencia()
     {
-        // dd($this->userSelected);
+        if ($this->licenciaUser->days > 0 &&  $this->licenciaUser->days > $this->avilibleDays) {
+            // $this->emitTo('livewire-toast', 'showError', 'La cantidad de dias ingresados supera los disponibles, corríjalo');
+            // $this->emitTo('livewire-toast', 'show', 'Licencia agregada correctamente');
+            session()->flash('livewire-toast', 'Licencia agregada correctamente');
+            return redirect()->route('admin.licencia-user.index');
+        } else {
+            // dd($this->userSelected);
 
-        // $this->validate();
-        $this->licenciaUser->status = true;
-        $this->licenciaUser->user_id = $this->userSelected;
-        $this->licenciaUser->licencia_id = $this->licenciaSelected;
-        $this->licenciaUser->year = 2023;
-        // dd($this->licenciaUser->user_id);
-        $this->licenciaUser->save();
-
-        return redirect()->route('admin.licencia-user.edit', $this->licenciaUser->id);
+            // $this->validate();
+            $this->licenciaUser->status = true;
+            $this->licenciaUser->user_id = $this->userSelected;
+            $this->licenciaUser->licencia_id = $this->licenciaSelected;
+            $this->licenciaUser->year = 2023;
+            // dd($this->licenciaUser->user_id);
+            $this->licenciaUser->save();
+            $this->emitTo('livewire-toast', 'show', 'Project Added Successfully');
+        }
     }
 
 
@@ -55,9 +60,8 @@ class NewLicenciaUser extends Component
                 // $this->licenciaUser->days = $this->avilibleDays;
             }
         }
-        if ($this->licenciaUser->days > 0 &&  $this->licenciaUser->days > $this->avilibleDays) {
-            dd('La cantidad de dias ingresada supera los diposnibles (' . $this->avilibleDays . ')');
-        }
+
+
         $users = User::orderBy('name')->pluck('name', 'id');
         $licencias = Licencia::orderBy('concept')->pluck('concept', 'id');
 
