@@ -21,7 +21,7 @@ class UserTableSeeder extends Seeder
         //        $user->givePermissionTo('User');
 
         $user = User::create([
-            'name'      => 'Admin',
+            'name'      => 'Daniel Bogarin',
             'anio_ingreso' => 2000,
             'email'     => 'admin@admin.com',
             'password'  => Hash::make('admin@admin.com'),
@@ -29,7 +29,7 @@ class UserTableSeeder extends Seeder
         ]);
 
         $user = User::create([
-            'name'      => 'Fede',
+            'name'      => 'Federico Barraza',
             'anio_ingreso' => 2001,
             'email'     => 'fede@admin.com',
             'password'  => Hash::make('fede@admin.com'),

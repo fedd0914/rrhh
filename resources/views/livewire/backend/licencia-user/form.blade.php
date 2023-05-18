@@ -21,18 +21,7 @@
             tabindex=2
         />
     </div>
-    <div class="row">
-        <div class="col-md-9">
-            <x-admin.input
-                title="Desde"
-                model="licenciaUser.start"
-                required=true
-                tabindex=2
-                type=date
-                placeholder="Fecha desde"
-            />
-        </div>
-    </div>
+
         <div class="row">
         <x-admin.input
             title="Días disponibles"
@@ -55,6 +44,39 @@
         />
     </div>
 
+    <div class="row">
+        <div class="w-6/12">
+
+        </div>
+
+        <div class="w-6/12">
+
+        </div>
+    </div>
+
+    <div class="grid grid-cols-2">
+        <div>
+            <x-admin.input
+            title="Desde"
+            model="licenciaUser.start"
+            required=true
+            tabindex=2
+            type=date
+            placeholder="Fecha desde"
+        />
+        </div>
+        <div>
+            <x-admin.input
+            title="Hasta"
+            model="licenciaUser.end"
+            required=true
+            disabled=true
+            tabindex=2
+            type=date
+            placeholder="Fecha hasta"
+        />
+        </div>
+      </div>
 
 </div>
 

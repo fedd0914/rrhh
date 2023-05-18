@@ -2,9 +2,10 @@
 
 namespace App\Http\Livewire\Backend\LicenciaUser;
 
-use App\Models\Licencia;
+use Carbon\Carbon;
 use App\Models\User;
 use Livewire\Component;
+use App\Models\Licencia;
 use App\Models\Licencia_User;
 
 class NewLicenciaUser extends Component
@@ -17,6 +18,8 @@ class NewLicenciaUser extends Component
         'userSelected' => 'required',
         'licenciaUser.days'  => 'numeric',
         'licenciaUser.status'  => '',
+        'licenciaUser.start'  => '',
+        'licenciaUser.end'  => '',
     ];
 
     public function mount()
@@ -26,6 +29,7 @@ class NewLicenciaUser extends Component
 
     public function save_licencia()
     {
+
         if ($this->licenciaUser->days > 0 &&  $this->licenciaUser->days > $this->avilibleDays) {
             $this->emitTo('livewire-toast', 'showError', 'La cantidad de dias ingresada supera los diposnibles (' . $this->avilibleDays . ')');
         } else {
@@ -43,6 +47,26 @@ class NewLicenciaUser extends Component
 
     public function render()
     {
+        if ($this->licenciaUser->days > 0 && $this->licenciaUser->start) {
+            $day = Carbon::parse($this->licenciaUser->start);
+            $this->licenciaUser->end = $day->add($this->licenciaUser->days, 'day')->format('Y-m-d');
+        }
+
+        if (date('D', strtotime($this->licenciaUser->start)) == 'Sat') {
+            $this->emitTo('livewire-toast', 'show', ['type' => 'warning', 'message' => 'El dia de inicio seleccionado es sabado!']);
+        } else if (date('D', strtotime($this->licenciaUser->start)) == 'Sun') {
+            $this->emitTo('livewire-toast', 'show', ['type' => 'warning', 'message' => 'El dia de inicio seleccionado es domingo!']);
+        }
+
+
+        if (date('D', strtotime($this->licenciaUser->end)) == 'Sat') {
+            $day = Carbon::parse($this->licenciaUser->start);
+            $this->licenciaUser->end = $day->add(4, 'day')->format('Y-m-d');
+        } else if (date('D', strtotime($this->licenciaUser->end)) == 'Sun') {
+            $day = Carbon::parse($this->licenciaUser->start);
+            $this->licenciaUser->end = $day->add(3, 'day')->format('Y-m-d');
+        }
+
         if ($this->licenciaSelected != null) {
             $licencia = Licencia::find($this->licenciaSelected);
             // $this->totalDays = $licencia->days;

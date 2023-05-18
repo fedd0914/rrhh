@@ -14,13 +14,13 @@
 
 .right {
   float: right;
-  width: 100px;
+  width: 200px;
   padding: 10px;
 }
 
 .left {
   float: left;
-  width: 100px;
+  width: 200px;
   padding: 10px;
   padding-top: 14px;
 }
@@ -33,7 +33,7 @@
 </head>
 <body>
 <br>
-<h2 style="text-align: center"><u><b>SOLICITUD UNICA DE PERMISOS Y LICENCIAS</b></u></h2>
+<h3 style="text-align: center"><u><b>SOLICITUD UNICA DE PERMISOS Y LICENCIAS</b></u></h3>
 
 <p class="cuerpo-chico">
     <b>1-</b> Licencia Anual Ordinaria con encuadre en el Artículo 7º de la Ley Nº 645-A (antigua L. 3521), Se establece el periodo de vacaciones de las actividades de la Administración Publica Provincial a partir del 15 de diciembre al 31 de marzo del siguiente año inclusive. Durante este Período deberá hacer uso de su licencia anual ordinaria todo el personal, con excepción de los agentes necesarios para atender tramites de carácter urgente o actividades improrrogables. Antes del 10 de diciembre de cada año la Autoridad competente mediante instrumento legal dictado al efecto deberá notificar a los agentes el periodo durante el cual gozaran del presente beneficio. El personal que por razones de servicios no haya usufructuado esta licencia en el periodo antes mencionado tendrá derecho a la misma dentro del transcurso del año.
@@ -79,60 +79,31 @@
     </tr>
 </table>
 
-    <h2 style="text-align: center;"> <b><u>SOLICITUD UNICA DE PERMISOS Y LICENCIAS </u></b></h2>
+    <h3 style="text-align: center;"> <b><u>SOLICITUD UNICA DE PERMISOS Y LICENCIAS </u></b></h3>
 
-    <br>
     <p>
-        Se solicitan {{$licenciaUser->days}} dias del beneficio '{{$licenciaUser->licencia->concept}}', desde {{ $licenciaUser->start->format('d/m/y') }} hasta {{ $licenciaUser->end->format('d/m/y') }}
+        Se solicitan {{$licenciaUser->days}} dias del beneficio {{$licenciaUser->licencia->concept}}, desde {{$desde}} hasta {{$hasta}}
     </p>
+    <br>
+    <b>_________________</b>
+    <br><b>FIRMA AGENTE</b>
+    <br><br>
+    <h2 style="text-align: center"><u><b>INFORME  DEL GERENTE DEL AREA</b></u></h2>
+    <p>
+        Con la conformidad de esta Gerencia, pase a la Dirección de Recursos Humanos, sujeto al control y aprobación del  trámite correspondiente.-
+    </p>
+    <br><br>
 
-<table style="width:100%;">
-    <tr>
-        <td colspan="2" style="text-align: center"><b>Beneficio</b></td>
-        <td style="text-align: center"><b>Días</b></td>
-        <td colspan="2" style="text-align: center"><b>Beneficio</b></td>
-        <td style="text-align: center"><b>Días</b></td>
-        <td colspan="2" style="text-align: center"><b>Beneficio</b></td>
-        <td style="text-align: center"><b>Días</b></td>
-    </tr>
-    <tr>
-        <td colspan="2" style="text-align: center">
-            Licencia Ordinaria Anual<br>
-            (Art. 7)
-            2022
-        </td>
-        <td style="text-align: center"> X | X </td>
-        <td colspan="2" style="text-align: center">
-            Permiso P/Examen<br>
-            (Art. 36)
-        </td>
-        <td style="text-align: center">X | X</td>
-        <td colspan="2" style="text-align: center">
-            Lic. Por Nac. <br> Agente Varón
-            (Art. 54)
-        </td>
-        <td style="text-align: center">X | X</td>
-    </tr>
 
-    <tr>
-        <td colspan="2" style="text-align: center">
-            Licencia Ordinaria Anual<br>
-            (Art. 7)
-            2022
-        </td>
-        <td style="text-align: center"> X | X </td>
-        <td colspan="2" style="text-align: center">
-            Permiso P/Examen<br>
-            (Art. 36)
-        </td>
-        <td style="text-align: center">X | X</td>
-        <td colspan="2" style="text-align: center">
-            Lic. Por Nac. <br> Agente Varón
-            (Art. 54)
-        </td>
-        <td style="text-align: center">X | X</td>
-    </tr>
-</table>
+    <div class="left">
+        <b>_________________________ <br>
+        Vº  Bº DIRECTOR / J.DPTO</b>
+    </div>
+
+    <div class="right">
+        <b>______________________<br>
+        FIRMA DEL GERENTE</b>
+    </div>
 
 
 </body>

@@ -16,10 +16,16 @@ class ListLicenciaUser extends Component
         $fecha = \Carbon\Carbon::now();
 
         $licenciaUser = Licencia_User::where('id', $id)->first();
+        $desde = \Carbon\Carbon::parse($licenciaUser->start)->format('d/m/Y');
+        $hasta = \Carbon\Carbon::parse($licenciaUser->end)->format('d/m/Y');
+
+        $licenciaUser->start = $licenciaUser->start;
 
         $this->pdfContent = [
             'licenciaUser' => $licenciaUser,
             'fecha' => $fecha,
+            'desde' => $desde,
+            'hasta' => $hasta
         ];
 
         return response()->streamDownload(function () {
