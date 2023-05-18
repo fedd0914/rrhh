@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()->index();
             $table->foreignId('licencia_id')->nullable()->index();
             $table->integer('days');
+            $table->date('start');
+            $table->date('end');
             $table->integer('year');
             $table->boolean('status')->default(true);
             $table->timestamps();

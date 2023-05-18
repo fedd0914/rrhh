@@ -22,6 +22,18 @@
         />
     </div>
     <div class="row">
+        <div class="col-md-9">
+            <x-admin.input
+                title="Desde"
+                model="licenciaUser.start"
+                required=true
+                tabindex=2
+                type=date
+                placeholder="Fecha desde"
+            />
+        </div>
+    </div>
+        <div class="row">
         <x-admin.input
             title="Días disponibles"
             disabled=true

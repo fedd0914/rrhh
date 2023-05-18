@@ -24,11 +24,24 @@
   padding: 10px;
   padding-top: 14px;
 }
+
+.cuerpo-chico {
+  font-size: 11px;
+}
 </style>
 <title>Nota solicitud de Inscripción al Registro de Personas Físicas (Instaladores Individuales)</title>
 </head>
 <body>
-    <img src="assets/images/logo.png" style="max-width: 715px;">
+<br>
+<h2 style="text-align: center"><u><b>SOLICITUD UNICA DE PERMISOS Y LICENCIAS</b></u></h2>
+
+<p class="cuerpo-chico">
+    <b>1-</b> Licencia Anual Ordinaria con encuadre en el Artículo 7º de la Ley Nº 645-A (antigua L. 3521), Se establece el periodo de vacaciones de las actividades de la Administración Publica Provincial a partir del 15 de diciembre al 31 de marzo del siguiente año inclusive. Durante este Período deberá hacer uso de su licencia anual ordinaria todo el personal, con excepción de los agentes necesarios para atender tramites de carácter urgente o actividades improrrogables. Antes del 10 de diciembre de cada año la Autoridad competente mediante instrumento legal dictado al efecto deberá notificar a los agentes el periodo durante el cual gozaran del presente beneficio. El personal que por razones de servicios no haya usufructuado esta licencia en el periodo antes mencionado tendrá derecho a la misma dentro del transcurso del año.
+    <br><br><b>2-</b> Artículo 8º de la Ley Nº 645-A A (antigua L. 3521), los agentes que tengan acreditada al 31 de diciembre de cada año una antigüedad de seis 6 meses a cinco 5 años tendrán derecho a 23 días corridos de licencia, quienes acrediten una antigüedad de más de cinco 5 años y hasta diez 10 años tendrán derecho a veintiocho 28 días corridos de licencia, los que cuenten con una antigüedad de más de diez 10 años y hasta dieciocho 18 años tendrán CUARENTA Y DOS 42 días corridos de Licencia y los que tengan una antigüedad de más de dieciocho 18 años gozaran de cuarenta y nueve 49 días corridos de Licencia. La Licencia se iniciara el primer día hábil de la semana en que se otorgue el beneficio.
+    <br><br><b>3-</b> Artículo 9º Se establece un periodo de vacaciones de invierno de diez días corridos cuyo periodo de goce será determinado anualmente por el Poder Ejecutivo.
+    <br><br><b>4-</b> PERMISOS: Nacimiento o adopción de hijos del agente varón 2 días hábiles – fallecimiento de cónyuge, padres, hijos o hermanos del agente hasta 6 días hábiles, suegros abuelos o nietos o personas a cargo hasta 2 días hábiles, parientes en tercer grado 1 día hábil, donación de sangre 1 día – razones particulares hasta cuarenta horas laborables por año calendario. Matrimonio de hijos del agente dos días, por natalicio del agente un día.-
+
+</p>
 <br>
 <table style="width:100%;">
     <tr>
@@ -67,6 +80,11 @@
 </table>
 
     <h2 style="text-align: center;"> <b><u>SOLICITUD UNICA DE PERMISOS Y LICENCIAS </u></b></h2>
+
+    <br>
+    <p>
+        Se solicitan {{$licenciaUser->days}} dias del beneficio '{{$licenciaUser->licencia->concept}}', desde {{ $licenciaUser->start->format('d/m/y') }} hasta {{ $licenciaUser->end->format('d/m/y') }}
+    </p>
 
 <table style="width:100%;">
     <tr>

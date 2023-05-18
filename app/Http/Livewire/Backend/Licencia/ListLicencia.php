@@ -15,7 +15,7 @@ class ListLicencia extends Component
     {
 
         $licencias = Licencia::orderBy('concept')
-            ->paginate(3);
+            ->paginate(10);
         return view('livewire.backend.licencia.list-licencia', [
             'licencias' => $licencias
         ]);
