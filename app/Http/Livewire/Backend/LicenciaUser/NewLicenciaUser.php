@@ -61,10 +61,12 @@ class NewLicenciaUser extends Component
 
         if (date('D', strtotime($this->licenciaUser->end)) == 'Sat') {
             $day = Carbon::parse($this->licenciaUser->start);
-            $this->licenciaUser->end = $day->add(4, 'day')->format('Y-m-d');
+            $this->licenciaUser->end = $day->add(3, 'day')->format('Y-m-d');
+            $this->licenciaUser->days += 2;
         } else if (date('D', strtotime($this->licenciaUser->end)) == 'Sun') {
             $day = Carbon::parse($this->licenciaUser->start);
-            $this->licenciaUser->end = $day->add(3, 'day')->format('Y-m-d');
+            $this->licenciaUser->end = $day->add(2, 'day')->format('Y-m-d');
+            $this->licenciaUser->days += 1;
         }
 
         if ($this->licenciaSelected != null) {
